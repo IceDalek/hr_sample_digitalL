@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/hr_sample
+    username: postgres
+    password: 123456
+
+  liquibase:
+    change-log: classpath:db/changelog/changelog-master.xml
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    ru.atc.hrsample.service.impl: DEBUG
+    org.mybatis: TRACE
+    ru.atc.hrsample.dao: TRACE
