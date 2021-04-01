@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/hr_sample
     username: postgres
-    password: 123456
+    password: 1
 
   liquibase:
     change-log: classpath:db/changelog/changelog-master.xml
@@ -14,5 +14,5 @@ mybatis:
 logging:
   level:
     ru.atc.hrsample.service.impl: DEBUG
-    org.mybatis: TRACE
-    ru.atc.hrsample.dao: TRACE
+    org.mybatis: INFO
+    ru.atc.hrsample.dao: INFO
