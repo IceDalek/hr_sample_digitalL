@@ -2,6 +2,9 @@ package ru.atc.hrsample.entity;
 
 import lombok.Data;
 
+/**
+ * Представление главы департамента
+ */
 @Data
 public class DepartmentChiefEntity {
     private String departmentName;

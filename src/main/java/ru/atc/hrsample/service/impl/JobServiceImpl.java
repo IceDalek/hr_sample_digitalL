@@ -12,7 +12,9 @@ import ru.atc.hrsample.entity.DepartmentEntity;
 import ru.atc.hrsample.entity.EmployeeEntity;
 import ru.atc.hrsample.entity.JobEntity;
 import ru.atc.hrsample.service.api.JobService;
-
+/**
+ * Реализация сервиса по взаимодействию с работами
+ */
 @Service
 @RequiredArgsConstructor
 @Slf4j

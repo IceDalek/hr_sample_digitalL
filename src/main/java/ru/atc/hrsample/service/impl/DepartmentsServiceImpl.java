@@ -15,6 +15,9 @@ import ru.atc.hrsample.service.api.DepartmentsService;
 
 import java.util.List;
 
+/**
+ * Реализация сервиса по работе с департаментами
+ */
 @Service
 @Slf4j
 @RequiredArgsConstructor
@@ -45,7 +48,7 @@ public class DepartmentsServiceImpl implements DepartmentsService {
     @Override
     public List<DepartmentChiefDTO> getDepartmentsByManagerLastName(String name) {
         List<DepartmentChiefEntity> entities = departmentsMapper.getDepartmentsByManagerLastName(name);
-        log.debug("Получены все сущности департаментов c фамилией менеджара " + " name");
+        log.debug("Получены все сущности департаментов c фамилией менеджера " + " name");
         return modelMapper.map(entities, TypeToken.of(List.class).getType());
     }
 

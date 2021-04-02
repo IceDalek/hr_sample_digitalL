@@ -17,7 +17,9 @@ import ru.atc.hrsample.entity.JobEntity;
 import ru.atc.hrsample.service.api.EmployeeService;
 
 import java.util.List;
-
+/**
+ * Реализация сервиса по взаимодействию с работниками
+ */
 @RequiredArgsConstructor
 @Service
 @Slf4j

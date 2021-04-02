@@ -1,3 +1,4 @@
+-- тут лежат запросы для тестирования и копирования в myBatis
 drop table departments cascade;
 drop table locations cascade;
 drop table job_history cascade;

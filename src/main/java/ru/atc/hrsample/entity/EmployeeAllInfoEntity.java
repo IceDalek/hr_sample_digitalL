@@ -4,6 +4,9 @@ import lombok.Data;
 
 import java.sql.Date;
 
+/**
+ * Представление расширенной информации о работнике
+ */
 @Data
 public class EmployeeAllInfoEntity {
     private Integer employeeId;

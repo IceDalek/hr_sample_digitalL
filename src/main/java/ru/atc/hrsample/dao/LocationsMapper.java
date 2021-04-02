@@ -6,7 +6,9 @@ import ru.atc.hrsample.entity.LocationsEntity;
 
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * Репозиторий мест
+ */
 @Mapper
 @Repository
 public interface LocationsMapper {

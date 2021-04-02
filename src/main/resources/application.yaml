@@ -13,6 +13,9 @@ mybatis:
 
 logging:
   level:
+
     ru.atc.hrsample.service.impl: DEBUG
     org.mybatis: INFO
     ru.atc.hrsample.dao: INFO
+
+

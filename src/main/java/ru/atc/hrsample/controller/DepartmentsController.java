@@ -1,6 +1,7 @@
 package ru.atc.hrsample.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -10,10 +11,14 @@ import ru.atc.hrsample.service.api.DepartmentsService;
 
 import java.util.List;
 
+/**
+ * Апи для взаимодействия с департаментами
+ */
 @Slf4j
 @RestController
 @RequestMapping("/departments")
 @RequiredArgsConstructor
+@Tag(name = "departments", description = "Апи для взаимодействия с департаментами")
 public class DepartmentsController {
     private final DepartmentsService departmentsService;
 
@@ -24,7 +29,7 @@ public class DepartmentsController {
     }
 
     @Operation(summary = "получение всех департаментов фильтр задается в виде параметра," +
-            " если параментры не указаны, то возвращается список всех департаментов" +
+            " если параметры не указаны, то возвращается список всех департаментов" +
             "если в параметре есть строка last, то возвращается список всех департаментов" +
             " по фамилии менеджера(параметр q), если в параметре есть строка dep," +
             " то возвращается список всех департаментов по его имени(параметр q)")
@@ -43,11 +48,13 @@ public class DepartmentsController {
 
     }
 
+    @Operation(summary = "добавить новый департамент")
     @PostMapping()
     public DepartmentDTO addDepartment(@RequestBody DepartmentDTO departmentDTO) {
         return departmentsService.addDepartment(departmentDTO);
     }
 
+    @Operation(summary = "обновить существующий департамент")
     @PostMapping("/{departmentId}")
     public DepartmentDTO updateDepartment(@PathVariable Integer departmentId,
                                           @RequestBody DepartmentDTO departmentDTO) {

@@ -3,6 +3,10 @@ package ru.atc.hrsample.entity;
 import lombok.Data;
 
 import java.sql.Date;
+
+/**
+ * Представление работника в базе данных
+ */
 @Data
 public class EmployeeEntity {
     private Integer employeeId;
