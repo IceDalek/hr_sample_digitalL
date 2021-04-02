@@ -66,3 +66,39 @@ insert into jobs(job_id, job_title, min_salary, max_salary)
 VALUES ( 'CLEAN','Cleaner',10000,20000
        );
 
+select * from jobs where job_id = 'HR';
+select * from job_history;
+update employees set first_name = #{}, last_name = #{}, email = #{},
+    phone_number = #{}, hire_date= #{}, job_id = #{}, salary = #{},
+    manager_id #{}, department_id = #{} where employee_id = #{id};
+
+
+insert into job_history(employee_id, start_date, end_date, job_id, department_id) VALUES (
+1, hireDate, current_date, 'HR', 1
+                                                                                         )
+
+     select distinct on (employees.employee_id) employees.employee_id, first_name, last_name,
+                    email, phone_number, hire_date,       
+                    employees.job_id, salary, d.department_id,       
+                    department_name,
+                                                start_date,
+                                                end_date
+             from employees       
+                      inner join departments d on d.department_id = employees.department_id       
+                      inner join locations l on l.location_id = d.location_id
+                        left join job_history jh on employees.employee_id = jh.employee_id
+             ;
+
+select distinct on (employees.employee_id) employees.employee_id, first_name, last_name,
+                                           email, phone_number, hire_date,
+                                           employees.job_id, salary, d.department_id,
+                                           department_name,
+                                           start_date,
+                                           end_date
+from employees
+         inner join departments d on d.department_id = employees.department_id
+         inner join locations l on l.location_id = d.location_id
+         left join job_history jh on employees.employee_id = jh.employee_id
+where email = 'string';
+;
+

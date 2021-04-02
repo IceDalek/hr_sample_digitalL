@@ -22,6 +22,7 @@ public class DepartmentsController {
     public DepartmentChiefDTO getDepartmentById(@PathVariable Integer departmentId) {
         return departmentsService.getDepartmentChiefById(departmentId);
     }
+
     @Operation(summary = "получение всех департаментов фильтр задается в виде параметра," +
             " если параментры не указаны, то возвращается список всех департаментов" +
             "если в параметре есть строка last, то возвращается список всех департаментов" +

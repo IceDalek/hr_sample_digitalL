@@ -9,6 +9,7 @@ import ru.atc.hrsample.dao.EmployeeMapper;
 import ru.atc.hrsample.dao.JobsMapper;
 import ru.atc.hrsample.dto.JobDTO;
 import ru.atc.hrsample.entity.DepartmentEntity;
+import ru.atc.hrsample.entity.EmployeeEntity;
 import ru.atc.hrsample.entity.JobEntity;
 import ru.atc.hrsample.service.api.JobService;
 
@@ -27,4 +28,15 @@ public class JobServiceImpl implements JobService {
         log.info("Создана сущность работы с id={}", jobEntity.getJobId());
         return jobDTO;
     }
+
+    @Override
+    public JobDTO getJobById(Integer id) {
+        JobEntity jobEntity = jobsMapper.getJobById(id).orElseThrow(
+                () -> new RuntimeException(
+                        String.format("Не найдена сущность работы по идентификатору=%s", id)
+                )
+        );
+        return modelMapper.map(jobEntity, JobDTO.class);
+    }
+
 }
